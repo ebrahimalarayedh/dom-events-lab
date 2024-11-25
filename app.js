@@ -86,7 +86,8 @@ function enteringNumber(event){
         console.log(event.target.textContent)
         display.textContent= `${num1String} ${operator} ${num2String} `
     }
-    else if(num2String!=null && operator!=null){
+    else if(num2String!=null && operator!=null && num1===0){
+        console.log(num1)
         num2String= num2String + event.target.textContent
         console.log(num2String)
         display.textContent= `${num1String} ${operator} ${num2String} `
@@ -107,23 +108,28 @@ function resultFun(event){
 
     num2= Number(num2String)
     console.log(typeof num2)
+    
 
     if(operator=="+"){
         result= num1 + num2;
-        display.textContent=`${num1String} ${operator} ${num2String} = ${result}`
+        // display.textContent=`${num1String} ${operator} ${num2String} = ${result}`
+        display.textContent=`= ${result}`
     }
 
     else if(operator=="-"){
         result= num1 - num2;
-        display.textContent=`${num1String} ${operator} ${num2String} = ${result}`
+        // display.textContent=`${num1String} ${operator} ${num2String} = ${result}`
+        display.textContent=`= ${result}`
     }
     else if(operator=="/"){
         result= num1 / num2;
-        display.textContent=`${num1String} ${operator} ${num2String} = ${result}`
+        // display.textContent=`${num1String} ${operator} ${num2String} = ${result}`
+        display.textContent=`= ${result}`
     }
     else if(operator=="*"){
         result= num1 * num2;
-        display.textContent=`${num1String} ${operator} ${num2String} = ${result}`
+        // display.textContent=`${num1String} ${operator} ${num2String} = ${result}`
+        display.textContent=`= ${result}`
     }
 
 }
